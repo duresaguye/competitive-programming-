@@ -1,6 +1,6 @@
 class Solution:
     def minimumMoves(self, s: str) -> int:
-        i = 0
+        """i = 0
         moves = 0
         s_len = len(s)
         while i < s_len:
@@ -11,22 +11,23 @@ class Solution:
             else:
                i += 1
 
-        return moves 
-        """
-        if all(char == 'X' for char in s):
+        return moves """
+      
+        if all(char == 'X' for char in s) and len(s) ==3:
             return 1
         if all(char =='0' for char in s):
             return 0
-        left,right, minmove = 0,1,0
+        right, minmove = 0,0
         while right <len(s):
-            if s[left]== s[right]:
+            if s[right]=='X':
+                right +=3
+                minmove+=1
+            else:
                 right+=1
-            elif s[left] != s[right]:
-                minmove +=1
-                left = right
-                right+=1
+
+           
         return minmove 
-        """
+      
         
     
 
