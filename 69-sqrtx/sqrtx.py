@@ -2,7 +2,7 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         if x is 1 or 0:
             return x
-        res = 0
+        
         left = 1
         right = x
         while left <= right:
