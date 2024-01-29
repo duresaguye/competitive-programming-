@@ -1,6 +1,6 @@
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
-        num = 0 
+        res = 0 
         right =0
         cursum=0
         left =0
@@ -9,11 +9,11 @@ class Solution:
             if right  >= k-1:
                 average = cursum / k
                 if average >= threshold:
-                    num+=1
+                    res+=1
                 cursum -= arr[left]
                 left+=1
             right +=1
-        return num
+        return res
 
                 
          
